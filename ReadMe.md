@@ -20,7 +20,10 @@ A set of generated images (10000 images) [npy file](https://1drv.ms/u/s!AgCFFlwz
 
 The code is based on the repo released by [IGEBM](https://arxiv.org/pdf/1903.08689.pdf)
 
-It works fine, but sometimes TF is hard to run on GPU (CPU is so slow), or occupies all memory of GPU so that you can't trace your training process.
+It works fine, but  
+
+1. sometimes TF is hard to run on GPU (CPU is so slow). Suggest to use conda [install tensorflow in conda](https://yann-leguilly.gitlab.io/post/2019-10-08-tensorflow-and-cuda/)
+2. or occupies all memory of GPU so that you can't trace your training process. I have added the config in the code [inception score](https://github.com/sndnyang/inception_score_fid/blob/master/inception.py#L25], [FID](https://github.com/sndnyang/inception_score_fid/blob/master/fid.py#L25)  but I can't guarantee.
 
 As a refer:
 [Inception Score Row 231](https://github.com/openai/ebm_code_release/blob/master/test_inception.py#L231) 
