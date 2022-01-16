@@ -1,15 +1,33 @@
 # Compute the Inception Score and FID using TF and PyTorch
 
-I give the demo in jupyter notebook file to show the usage.
+I give the demo in jupyter notebook files to show the usage and difference. PyTorch code is faster. FID values are also different.
+
+The difference on cifar10:
+
+| dataset      | TF      | PyTorch | gap |
+|--------------|---------|---------|-----|
+| Train        | 0.08768 | 0.20264 |     |
+| Test         | 2.20365 | 5.12468 |     |
+| Fake samples | 16.0426 | 9.87148 |     |
+
+
+
 
 Tensorflow: please check demo.py, or eval_is_fid_tf.ipynb, using inception.py and fid.py
 
 ```python
+# [n, 32, 32, 3]
 fid = get_fid_score(test_images, test_ims)
 score, std = get_inception_score(test_images, splits=splits)
 ```
 
-PyTorch:TODO https://github.com/mseitzer/pytorch-fid  this one computes based on the files stored in disk (two directorys)
+PyTorch: please check eval_is_fid_pytorch.ipynb, using fid_score.py
+
+```python
+# [n, 3, 32, 32]
+calculate_fid_score(feed_imgs2, test_imgs)
+No Inception Score
+```
 
 ### 
 
@@ -31,6 +49,7 @@ and [FID Row 39](https://github.com/openai/ebm_code_release/blob/master/fid.py#L
 
 ## PyTorch Code 
 
-TODO
+mainly based on  https://github.com/mseitzer/pytorch-fid  this one computes based on the files stored in disk (two directorys)
 
-
+As a refer:
+[FID pytorch](https://github.com/mseitzer/pytorch-fid/blob/master/src/pytorch_fid/fid_score.py)
