@@ -8,7 +8,7 @@ import os.path as osp
 import os
 import numpy as np
 import time
-from scipy.misc import imread, imresize
+from matplotlib.pyplot import imread
 from torchvision.datasets import CIFAR10, MNIST, SVHN, CIFAR100, ImageFolder
 from torchvision import transforms
 from imagenet_preprocessing import ImagenetPreprocessor
